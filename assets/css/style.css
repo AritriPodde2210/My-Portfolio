@@ -4,7 +4,7 @@
   /**
    * colors
    */
-
+  --section-padding: 90px;
   --white: hsla(0, 0%, 100%, 1);
   --white_a8: hsla(0, 0%, 100%, 0.08);
   --white_a12: hsla(0, 0%, 100%, 0.12);
@@ -346,54 +346,51 @@ body.nav-active { overflow: hidden; }
   #HERO
 \*-----------------------------------*/
 
+/* HERO SECTION */
 .hero {
   padding-block-start: calc(var(--section-padding) + 50px);
   background-color: var(--cultured);
 }
 
 .hero .container {
-  display: grid;
-  gap: 50px;
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  gap: 50px; /* Space between the image and text */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .hero-banner {
-  position: relative;
-  max-width: max-content;
-  margin-inline: auto;
+  flex: 0 0 40%; /* Adjust width of the image container */
+  max-width: 200px; /* Limit maximum width of the image */
 }
 
-.hero-banner .w-100 {
-  mask-image: url("../images/Blob.svg");
-  -webkit-mask-image: url("../images/Blog.svg");
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
-  mask-size: auto;
-  -webkit-mask-size: auto;
+.hero-banner .hero-image {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make the image rounded */
+  object-fit: cover; /* Ensure proper fitting of the image */
+}
+.hero-content { 
+  text-align: center; 
 }
 
-.hero .shape {
-  position: absolute;
-  bottom: 10%;
-  right: 2%;
-  filter: drop-shadow(var(--shadow-2));
+.hero-text {
+  flex: 1; /* Allow the text to take up remaining space */
+  max-width: 400px; /* Control maximum width of the text */
 }
 
-.hero-content { text-align: center; }
+.hero-title {
+  font-size: 2rem; /* Adjust font size */
+  margin-bottom: 20px; /* Spacing below the title */
+}
 
-.hero .section-text { margin-block: 24px 36px; }
-
+.hero .section-text {
+   margin-block: 24px 36px;
+   }
 .btn-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
+  gap: 12px; /* Space between buttons */
 }
-
-
-
 
 
 /*-----------------------------------*\
